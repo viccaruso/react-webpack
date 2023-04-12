@@ -45,19 +45,6 @@ module.exports = {
               importLoaders: 1,
             },
           },
-          {
-            loader: "postcss-loader",
-            options: {
-              sourceMap: true,
-              postcssOptions: {
-                plugins: [
-                  require("postcss-import")(),
-                  require("autoprefixer")(),
-                  require("postcss-nested")(),
-                ],
-              },
-            },
-          },
         ],
       },
     ],
