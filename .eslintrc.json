@@ -23,7 +23,11 @@
     "jest": true
   },
   "plugins": ["babel", "react"],
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
   "rules": {
     "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
     "indent": [
