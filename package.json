@@ -4,7 +4,8 @@
   "description": "My template for creating a React app using Webpack and Babel as an alternative to using Create React App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
