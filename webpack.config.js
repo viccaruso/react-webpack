@@ -1,23 +1,27 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-require("dotenv").config();
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+require('dotenv').config();
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: './src/index.jsx',
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "build"),
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'build'),
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
+      template: path.join(__dirname, './src/index.html'),
     }),
-    new webpack.EnvironmentPlugin(["SECRET_API_KEY", "SECRET_API_URL"]),
+    new webpack.EnvironmentPlugin(['SECRET_API_KEY', 'SECRET_API_URL']),
+    new CopyPlugin({
+      patterns: [{ from: 'public' }],
+    }),
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "build"),
+      directory: path.join(__dirname, 'build'),
     },
     port: 3000,
   },
@@ -26,14 +30,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               importLoaders: 1,
               modules: true,
@@ -44,12 +48,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
         exclude: /\.module\css$/,
       },
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ['.js', '.jsx'],
   },
 };
