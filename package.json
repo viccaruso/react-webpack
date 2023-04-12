@@ -1,0 +1,12 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "description": "My template for creating a React app using Webpack and Babel as an alternative to using Create React App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
