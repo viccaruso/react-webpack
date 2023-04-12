@@ -31,21 +31,21 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: "style-loader",
-          },
+          "style-loader",
           {
             loader: "css-loader",
             options: {
-              sourceMap: true,
-              modules: {
-                exportLocalsConvention: "camelCase",
-                localIdentName: "[name]__[local]__[contenthash:base64:5]",
-              },
               importLoaders: 1,
+              modules: true,
             },
           },
         ],
+        include: /\.module\.css$/,
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+        exclude: /\.module\css$/,
       },
     ],
   },
