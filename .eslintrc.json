@@ -26,7 +26,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:import/recommended"
   ],
   "rules": {
     "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
